@@ -5,8 +5,9 @@ import File from '../models/File';
 import User from '../models/User';
 import Appointment from '../models/Appointment';
 import Notification from '../schemas/Notification';
+import CancellationMail from '../jobs/CancellationMail';
 
-import Mail from '../../lib/Mail';
+import Queue from '../../lib/Queue';
 
 /**
  * index lista
@@ -165,18 +166,11 @@ class AppointmentController {
     /**
      * Envia um e-mail informando o cancelamento de um agendamento
      * para o prestador de serviço
+     * utilizando jobs (segundo plano)
      */
-    await Mail.sendMail({
-      to: `${appointment.provider.name} <${appointment.provider.email}>`,
-      subject: 'Agendamento cancelado',
-      template: 'cancellation',
-      context: {
-        provider: appointment.provider.name,
-        user: appointment.user.name,
-        date: format(appointment.date, "'dia' dd 'de' MMMM', às' H:mm'h'", {
-          locale: pt,
-        }),
-      },
+
+    await Queue.add(CancellationMail.key, {
+      appointment,
     });
 
     return res.json(appointment);
