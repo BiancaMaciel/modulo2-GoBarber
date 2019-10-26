@@ -21,13 +21,13 @@ class ScheduleController {
     // 3 - Verificar os agendamentos de um determinado prestador de serviço
     const appointments = await Appointment.findAll({
       where: {
-        provider: req.userId,
+        provider_id: req.userId,
         canceled_at: null,
         date: {
           [Op.between]: [startOfDay(parsedDate), endOfDay(parsedDate)],
         },
-        order: ['date'],
       },
+      order: ['date'],
     });
     return res.json(appointments);
   }
