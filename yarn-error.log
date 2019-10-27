@@ -1,5 +1,5 @@
 Arguments: 
-  /home/mb1801/.nvm/versions/node/v10.16.3/bin/node /home/mb1801/.nvm/versions/node/v10.16.3/bin/yarn add express-handlebars nodemailer-express-handlebar
+  /home/mb1801/.nvm/versions/node/v10.16.3/bin/node /home/mb1801/.nvm/versions/node/v10.16.3/bin/yarn add Youch
 
 PATH: 
   /home/mb1801/.nvm/versions/node/v10.16.3/bin:/home/mb1801/Library/Android/sdk/platform-tools:/home/mb1801/Library/Android/sdk/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/yarn-[version]/bin:/home/mb1801/Android/Sdk/tools:/home/mb1801/Android/Sdk/platform-tools:/opt/gradle/gradle-5.6.2/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/nodemailer-express-handlebar: Not found
+  Error: https://registry.yarnpkg.com/Youch: Not found
       at Request.params.callback [as _callback] (/home/mb1801/.nvm/versions/node/v10.16.3/lib/node_modules/yarn/lib/cli.js:66926:18)
       at Request.self.callback (/home/mb1801/.nvm/versions/node/v10.16.3/lib/node_modules/yarn/lib/cli.js:140564:22)
       at Request.emit (events.js:198:13)
